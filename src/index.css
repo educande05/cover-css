@@ -1,13 +1,18 @@
 @import "./reset.css";
 
 :root {
-  --disc-colour: grey;
-  --disc-label: white;
+  --disc-colour: black;
+  --label-colour: red;
+  --center-colour: white;
+  --disc-height: ;
+  --disc-width: ;
+  --label-radius: ;
+  --center-radius: ;
 }
 
 .container {
     margin: 5% auto ;
-    background-image: navy;
+    background-image: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,16 +26,16 @@
   }
   
   .box {
-    background-image: url(./assets/crash-bandicoot-201610518540_1.jpg);
+    background-image: url(../public/img/crash-bandicoot-201610518540_1.jpg);
     background-size: cover;
-    border: 5px solid black;
+    border: 5px solid var(--disc-colour);
     z-index: 1;
   }
   
   .vinile {
     background: black;
     background-image: linear-gradient(130deg, transparent 40%, #fff5, transparent 60%),
-    repeating-radial-gradient(circle at center, #333 0 1px, black 1px 20px);
+    repeating-radial-gradient(circle at center, #333 0 1px, var(--disc-colour) 1px 20px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,14 +48,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: red;
+    background: var(--label-colour);;
     height: 200px;
     width: 200px;
     border-radius: 50%;
   }
 
   .center {
-    background: white;
+    background: var(--center-colour);;
     height: 20px;
     width: 20px;
     border-radius: 50%;
