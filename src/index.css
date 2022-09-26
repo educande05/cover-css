@@ -6,8 +6,9 @@
   --center-colour: white;
   --disc-height: 500px;
   --disc-width: 1000px;
-  --label-radius: 200px;
-  --hole-radius: 20px;
+  --label-width: 200px;
+  --hole-width: 20px;
+  --vinyl-radius: 50%;
 }
 
 .container {
@@ -22,8 +23,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: var(--disc-height);
   width: var(--disc-width);
+  height: var(--disc-height);
 }
 
 .child {
@@ -44,12 +45,20 @@
   background-image:
     linear-gradient(130deg, transparent 40%, #fff5, transparent 60%),
     repeating-radial-gradient(circle at center, #333 0 1px, var(--disc-colour) 1px 20px);
+  transform: translateX(-150px);
+  transition:
+    transform 1s ease-in-out,
+    background-image 6s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  left: -5%;
-  border-radius: 50%;
+  left: -10%;
+  border-radius: var(--vinyl-radius);
+}
+
+.vinyl:hover {
+  transform: translateX(-50px) rotate(80deg);
 }
 
 .label {
@@ -57,14 +66,14 @@
   justify-content: center;
   align-items: center;
   background: var(--label-colour);
-  height: var(--label-radius);
-  width: var(--label-radius);
-  border-radius: 50%;
+  width: var(--label-width);
+  height: var(--label-width);
+  border-radius: var(--vinyl-radius);
 }
 
 .hole {
   background: var(--center-colour);
-  height: var(--hole-radius);
-  width: var(--hole-radius);
-  border-radius: 50%;
+  width: var(--hole-width);
+  height: var(--hole-width);
+  border-radius: var(--vinyl-radius);
 }
